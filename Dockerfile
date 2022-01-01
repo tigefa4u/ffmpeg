@@ -7,7 +7,7 @@ ENV DEBCONF_NONINTERACTIVE_SEEN=true
 CMD ["/bin/bash"]
 
 # ...put your own build instructions here...
-COPY sources.list /etc/apt/sources.list
+# COPY sources.list /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get dist-upgrade -yqq
 RUN apt-get install -yqq apt-utils sudo
