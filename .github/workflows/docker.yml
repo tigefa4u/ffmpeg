@@ -2,9 +2,14 @@ name: Run Docker
 
 # Controls when the workflow will run
 on:
+  schedule:
+    - cron: '24 0 * * *'
   push:
-    branches:
-      - 'main'
+    branches: [ main ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
