@@ -19,7 +19,6 @@ RUN add-apt-repository ppa:savoury1/graphics -y
 RUN add-apt-repository ppa:savoury1/multimedia -y
 RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
 RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
-#RUN add-apt-repository ppa:graphics-drivers/ppa -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN add-apt-repository ppa:brightbox/ruby-ng -y
 RUN add-apt-repository ppa:chris-lea/redis-server -y
@@ -27,7 +26,8 @@ RUN sudo add-apt-repository ppa:nginx/stable -y
 RUN sudo add-apt-repository ppa:ondrej/php -y
 RUN sudo add-apt-repository ppa:fish-shell/release-3 -y
 RUN sudo add-apt-repository ppa:maxmind/ppa -y
-RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+    sudo add-apt-repository ppa:longsleep/golang-backports -y
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 RUN sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger focal main > /etc/apt/sources.list.d/passenger.list'
 RUN sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -43,7 +43,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 RUN apt-get update && apt-get dist-upgrade -yqq
-RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest
+RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest golang
 RUN apt-get install -yqq ffmpeg
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 RUN locale-gen id_ID && update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
