@@ -43,7 +43,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 RUN apt-get update && apt-get dist-upgrade -yqq
-RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest golang
+RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest golang python3-pip python3-dev
 RUN apt-get install -yqq ffmpeg
 RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc
 RUN cd /tmp && wget https://github.com/gohugoio/hugo/releases/download/v0.92.1/hugo_extended_0.92.1_Linux-64bit.deb && apt install ./*.deb
