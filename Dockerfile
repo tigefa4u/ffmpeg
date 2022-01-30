@@ -45,6 +45,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/g
 RUN apt-get update && apt-get dist-upgrade -yqq
 RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest golang
 RUN apt-get install -yqq ffmpeg
+RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 RUN locale-gen id_ID && update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
 RUN apt-get dist-upgrade -yqq
