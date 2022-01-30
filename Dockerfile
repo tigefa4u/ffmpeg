@@ -46,6 +46,7 @@ RUN apt-get update && apt-get dist-upgrade -yqq
 RUN sudo apt-get update && sudo apt-get install -yqq nodejs yarn git git-lfs gh speedtest golang
 RUN apt-get install -yqq ffmpeg
 RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc
+RUN cd /tmp && wget https://github.com/gohugoio/hugo/releases/download/v0.92.1/hugo_extended_0.92.1_Linux-64bit.deb && apt install ./*.deb
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 RUN locale-gen id_ID && update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
 RUN apt-get dist-upgrade -yqq
