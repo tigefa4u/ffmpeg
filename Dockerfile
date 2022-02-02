@@ -13,11 +13,11 @@ RUN apt-get dist-upgrade -yqq
 RUN apt-get install -yqq apt-utils sudo
 RUN apt-get install -yqq lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet telnet tree lshw htop p7zip p7zip-full zip unzip
 RUN apt-get install -yqq language-pack-gnome-en language-pack-gnome-id dirmngr gnupg gnupg2
-RUN add-apt-repository ppa:savoury1/build-tools -y
-RUN add-apt-repository ppa:savoury1/backports -y
-RUN add-apt-repository ppa:savoury1/graphics -y
-RUN add-apt-repository ppa:savoury1/multimedia -y
-RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
+# RUN add-apt-repository ppa:savoury1/build-tools -y
+# RUN add-apt-repository ppa:savoury1/backports -y
+# RUN add-apt-repository ppa:savoury1/graphics -y
+# RUN add-apt-repository ppa:savoury1/multimedia -y
+# RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
 #RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN add-apt-repository ppa:brightbox/ruby-ng -y
