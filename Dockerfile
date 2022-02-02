@@ -18,7 +18,7 @@ RUN add-apt-repository ppa:savoury1/backports -y
 RUN add-apt-repository ppa:savoury1/graphics -y
 RUN add-apt-repository ppa:savoury1/multimedia -y
 RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
-RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
+#RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN add-apt-repository ppa:brightbox/ruby-ng -y
 RUN add-apt-repository ppa:chris-lea/redis-server -y
