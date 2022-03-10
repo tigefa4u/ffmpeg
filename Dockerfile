@@ -49,7 +49,7 @@ RUN apt-get install -yqq ffmpeg
 RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc
 # RUN cd /tmp && wget https://github.com/gohugoio/hugo/releases/download/v0.93.2/hugo_extended_0.93.2_Linux-64bit.deb && apt install ./*.deb
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
-RUN locale-gen id_ID && update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
+# RUN locale-gen id_ID && update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
 RUN apt-get dist-upgrade -yqq
 # RUN cat /etc/apt/sources.list | curl -F 'clbin=<-' https://clbin.com
 # RUN cd /tmp && curl -sS "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip -qq awscliv2.zip && sudo ./aws/install && aws --version
