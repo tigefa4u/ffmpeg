@@ -18,15 +18,15 @@ RUN apt-get install -yqq lsb-release apt-transport-https ca-certificates softwar
 RUN add-apt-repository ppa:savoury1/graphics -y
 RUN add-apt-repository ppa:savoury1/multimedia -y
 RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
-RUN add-apt-repository ppa:savoury1/ffmpeg5 -y
-#RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
+#RUN add-apt-repository ppa:savoury1/ffmpeg5 -y
+RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN add-apt-repository ppa:brightbox/ruby-ng -y
 RUN add-apt-repository ppa:chris-lea/redis-server -y
 RUN sudo add-apt-repository ppa:nginx/stable -y
 RUN sudo add-apt-repository ppa:ondrej/php -y
-#RUN sudo add-apt-repository ppa:fish-shell/release-3 -y
 RUN sudo add-apt-repository ppa:maxmind/ppa -y
+#RUN sudo add-apt-repository ppa:fish-shell/release-3 -y
 # RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
 #     sudo add-apt-repository ppa:longsleep/golang-backports -y
 # RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
