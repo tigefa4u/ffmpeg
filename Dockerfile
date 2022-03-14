@@ -18,7 +18,7 @@ RUN apt-get install -yqq lsb-release apt-transport-https ca-certificates softwar
 RUN add-apt-repository ppa:savoury1/graphics -y
 RUN add-apt-repository ppa:savoury1/multimedia -y
 RUN add-apt-repository ppa:savoury1/ffmpeg4 -y
-#RUN add-apt-repository ppa:savoury1/ffmpeg5 -y
+RUN add-apt-repository ppa:savoury1/ffmpeg5 -y
 RUN add-apt-repository ppa:savoury1/ffmpeg-git -y
 RUN add-apt-repository ppa:git-core/ppa -y
 RUN add-apt-repository ppa:brightbox/ruby-ng -y
