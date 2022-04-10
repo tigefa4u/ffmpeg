@@ -14,7 +14,7 @@ RUN apt-get update \
     && add-apt-repository ppa:git-core/ppa -y \
     && add-apt-repository ppa:brightbox/ruby-ng -y \
     && add-apt-repository ppa:redislabs/redis -y \
-    && add-apt-repository ppa:nginx/stable -y \
+    && add-apt-repository ppa:ondrej/nginx-mainline -y \
     && add-apt-repository ppa:ondrej/php -y \
     && add-apt-repository ppa:maxmind/ppa -y \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
