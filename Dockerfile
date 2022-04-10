@@ -1,4 +1,4 @@
-FROM phusion/baseimage:master
+FROM ghcr.io/phusion/baseimage:focal-1.2.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
