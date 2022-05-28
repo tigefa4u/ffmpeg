@@ -19,7 +19,7 @@ RUN apt-get update \
     && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get update && apt-get dist-upgrade -yqq \
     && apt-get install -yqq git git-lfs \
-    && cd /usr/local && aria2c https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz && tar --strip-components=1 -xvaf /usr/local/ffmpeg-master-latest-linux64-gpl.tar.xz -C /usr/local/ && rm -rf /usr/local/ffmpeg-master-latest-linux64-gpl.tar.xz /usr/local/doc /usr/local/LICENSE.txt \
+    && cd /usr/local && aria2c https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz && tar --strip-components=1 -xvJf /usr/local/ffmpeg-master-latest-linux64-gpl.tar.xz -C /usr/local/ && rm -rf /usr/local/ffmpeg-master-latest-linux64-gpl.tar.xz /usr/local/doc /usr/local/LICENSE.txt \
     && wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc \
     && ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
