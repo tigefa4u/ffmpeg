@@ -1,4 +1,4 @@
-FROM ghcr.io/phusion/baseimage:focal-1.2.0
+FROM ghcr.io/phusion/baseimage:jammy-1.0.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
@@ -12,7 +12,6 @@ RUN apt-get update \
     && add-apt-repository ppa:savoury1/ffmpeg4 -y \
     && add-apt-repository ppa:savoury1/ffmpeg5 -y \
     && add-apt-repository ppa:git-core/ppa -y \
-    && add-apt-repository ppa:brightbox/ruby-ng -y \
     && add-apt-repository ppa:redislabs/redis -y \
     && add-apt-repository ppa:ondrej/nginx-mainline -y \
     && add-apt-repository ppa:ondrej/php -y \
@@ -23,6 +22,7 @@ RUN apt-get update \
     && apt-get install -yqq git git-lfs \
     && apt-get install -yqq ffmpeg \
     && wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc \
+    && apt-get install -yqq tzdata \
     && ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 # Clean up APT when done.
@@ -30,4 +30,3 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Use baseimage-docker's init system.
 CMD ["/bin/bash"]
-
