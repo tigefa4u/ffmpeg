@@ -22,6 +22,8 @@ RUN apt-get update \
     && apt-get install -yqq git git-lfs \
     && apt-get install -yqq ffmpeg \
     && wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc \
+    && apt-get install -yqq python3-pip \
+    && pip --no-cache-dir install s3cmd \
     && apt-get install -yqq tzdata \
     && ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
