@@ -5,11 +5,11 @@ on:
   schedule:
     - cron: '0 7 * * *'
   push:
-    branches: [ main ]
+    branches: [ alpine ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ main ]
+    branches: [ alpine ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,26 +17,22 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@latest
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@latest
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@latest
         with:
           images: tigefa/ffmpeg
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=raw,value=latest
 
       - name: Build and push Docker images
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@latest
         with:
           context: .
           file: ./Dockerfile
