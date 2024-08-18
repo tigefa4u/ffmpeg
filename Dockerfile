@@ -9,8 +9,6 @@ RUN apt-get update \
     && apt-get dist-upgrade -yqq \
     && apt-get install -yqq apt-utils sudo \
     && apt-get install -yqq lsb-release apt-transport-https ca-certificates software-properties-common bash bash-completion wget curl netcat shellcheck htop aria2 tar rar unrar p7zip p7zip-full zip unzip \
-    && add-apt-repository ppa:savoury1/ffmpeg4 -y \
-    && add-apt-repository ppa:savoury1/ffmpeg5 -y \
     && add-apt-repository ppa:git-core/ppa -y \
     && add-apt-repository ppa:redislabs/redis -y \
     && add-apt-repository ppa:ondrej/nginx-mainline -y \
