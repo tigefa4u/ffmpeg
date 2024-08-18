@@ -1,4 +1,4 @@
-FROM ghcr.io/phusion/baseimage:jammy-1.0.4
+FROM ghcr.io/phusion/baseimage:noble-1.0.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
@@ -8,7 +8,7 @@ ENV DEBCONF_NONINTERACTIVE_SEEN=true
 RUN apt-get update \
     && apt-get dist-upgrade -yqq \
     && apt-get install -yqq apt-utils sudo \
-    && apt-get install -yqq lsb-release apt-transport-https ca-certificates software-properties-common bash bash-completion wget curl netcat shellcheck htop aria2 tar rar unrar p7zip p7zip-full zip unzip \
+    && apt-get install -yqq lsb-release apt-transport-https ca-certificates software-properties-common bash bash-completion wget curl shellcheck htop aria2 tar rar unrar p7zip p7zip-full zip unzip \
     && add-apt-repository ppa:git-core/ppa -y \
     && add-apt-repository ppa:redislabs/redis -y \
     && add-apt-repository ppa:ondrej/nginx-mainline -y \
