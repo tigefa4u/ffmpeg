@@ -33,7 +33,7 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-            type=raw,value=latest
+            type=raw,value=alpine
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v6
