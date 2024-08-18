@@ -1,4 +1,4 @@
-FROM ghcr.io/phusion/baseimage:jammy-1.0.0
+FROM ghcr.io/phusion/baseimage:jammy-1.0.4
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
