@@ -1,4 +1,4 @@
-name: Docker
+name: Githuub Container Registry Publish
 
 on:
   schedule:
@@ -9,6 +9,9 @@ on:
     tags: ["v*.*.*"]
   pull_request:
     branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 env:
   # Use docker.io for Docker Hub if empty
