@@ -1,4 +1,4 @@
-name: Docker
+name: Github Container Registry publish
 
 on:
   schedule:
@@ -7,6 +7,9 @@ on:
     branches: [ alpine ]
   pull_request:
     branches: [ alpine ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 env:
   # Use docker.io for Docker Hub if empty

@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk add --upgrade --no-cache ffmpeg aria2 wget curl bash git rclone \
+RUN apk add --upgrade --no-cache ffmpeg aria2 wget curl bash git rclone jq \
     && wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/bin/mc && chmod +x /usr/bin/mc \
     && apk add --upgrade --no-cache py3-pip bash-completion \
     && apk -U upgrade \
