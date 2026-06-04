@@ -1,4 +1,4 @@
-name: Githuub Container Registry Publish
+name: Github Container Registry Publish
 
 on:
   schedule:
